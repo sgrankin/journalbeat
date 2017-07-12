@@ -4,7 +4,6 @@
 package cpu
 
 import (
-	"runtime"
 	"testing"
 
 	"github.com/elastic/gosigar"
@@ -22,8 +21,6 @@ func TestGetCpuTimes(t *testing.T) {
 }
 
 func TestCpuPercentage(t *testing.T) {
-	NumCPU = 1
-	defer func() { NumCPU = runtime.NumCPU() }()
 
 	cpu := CPU{}
 

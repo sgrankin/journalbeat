@@ -2,10 +2,22 @@
 
 
 [[projects]]
+  name = "github.com/Microsoft/go-winio"
+  packages = ["."]
+  revision = "c4dc1301f1dc0307acd38e611aa375a64dfe0642"
+  version = "v0.4.3"
+
+[[projects]]
   name = "github.com/Shopify/sarama"
   packages = ["."]
   revision = "c01858abb625b73a3af51d0798e4ad42c8147093"
   version = "v1.12.0"
+
+[[projects]]
+  name = "github.com/Sirupsen/logrus"
+  packages = ["."]
+  revision = "7f976d3a76720c4c27af2ba716b85d2e0a7e38b1"
+  version = "v1.0.1"
 
 [[projects]]
   name = "github.com/coreos/go-systemd"
@@ -24,6 +36,30 @@
   packages = ["spew"]
   revision = "346938d642f2ec3594ed81d874461961cd0faa76"
   version = "v1.1.0"
+
+[[projects]]
+  name = "github.com/docker/distribution"
+  packages = ["digest","reference"]
+  revision = "a25b9ef0c9fe242ac04bb20d3a028442b7d266b6"
+  version = "v2.6.1"
+
+[[projects]]
+  name = "github.com/docker/docker"
+  packages = ["api/types","api/types/blkiodev","api/types/container","api/types/events","api/types/filters","api/types/mount","api/types/network","api/types/reference","api/types/registry","api/types/strslice","api/types/swarm","api/types/time","api/types/versions","api/types/volume","client","pkg/tlsconfig"]
+  revision = "092cba3727bb9b4a2f0e922cd6c0f93ea270e363"
+  version = "v1.13.1"
+
+[[projects]]
+  name = "github.com/docker/go-connections"
+  packages = ["nat","sockets","tlsconfig"]
+  revision = "990a1a1a70b0da4c4cb70e117971a4f0babfbf1a"
+  version = "v0.2.1"
+
+[[projects]]
+  name = "github.com/docker/go-units"
+  packages = ["."]
+  revision = "f2d77a61e3c169b43402a0a1e84f06daf29b8190"
+  version = "v0.3.1"
 
 [[projects]]
   name = "github.com/eapache/go-resiliency"
@@ -45,9 +81,9 @@
 
 [[projects]]
   name = "github.com/elastic/beats"
-  packages = ["libbeat/beat","libbeat/cfgfile","libbeat/common","libbeat/common/dtfmt","libbeat/common/file","libbeat/common/fmtstr","libbeat/common/jsontransform","libbeat/common/match","libbeat/common/op","libbeat/common/streambuf","libbeat/dashboards/dashboards","libbeat/logp","libbeat/monitoring","libbeat/monitoring/adapter","libbeat/outputs","libbeat/outputs/codecs/format","libbeat/outputs/codecs/json","libbeat/outputs/console","libbeat/outputs/elasticsearch","libbeat/outputs/fileout","libbeat/outputs/kafka","libbeat/outputs/logstash","libbeat/outputs/mode","libbeat/outputs/mode/lb","libbeat/outputs/mode/modeutil","libbeat/outputs/mode/single","libbeat/outputs/outil","libbeat/outputs/redis","libbeat/outputs/transport","libbeat/paths","libbeat/plugin","libbeat/processors","libbeat/processors/actions","libbeat/processors/add_cloud_metadata","libbeat/publisher","libbeat/service","metricbeat/schema","metricbeat/schema/mapstriface"]
-  revision = "142f8fe79f42551c76891f7d9cf1e1b638903099"
-  version = "v5.5.0"
+  packages = ["filebeat/input/file","libbeat/api","libbeat/beat","libbeat/cfgfile","libbeat/common","libbeat/common/dtfmt","libbeat/common/file","libbeat/common/fmtstr","libbeat/common/jsontransform","libbeat/common/match","libbeat/common/op","libbeat/common/streambuf","libbeat/dashboards","libbeat/logp","libbeat/monitoring","libbeat/monitoring/adapter","libbeat/monitoring/report","libbeat/monitoring/report/elasticsearch","libbeat/outputs","libbeat/outputs/codecs/format","libbeat/outputs/codecs/json","libbeat/outputs/console","libbeat/outputs/elasticsearch","libbeat/outputs/fileout","libbeat/outputs/kafka","libbeat/outputs/logstash","libbeat/outputs/mode","libbeat/outputs/mode/lb","libbeat/outputs/mode/modeutil","libbeat/outputs/mode/single","libbeat/outputs/outil","libbeat/outputs/redis","libbeat/outputs/transport","libbeat/paths","libbeat/plugin","libbeat/processors","libbeat/processors/actions","libbeat/processors/add_cloud_metadata","libbeat/processors/add_docker_metadata","libbeat/processors/add_locale","libbeat/processors/kubernetes","libbeat/publisher","libbeat/service","libbeat/template","libbeat/version","metricbeat/schema","metricbeat/schema/mapstriface"]
+  revision = "08c25427018977dd1e5aaaf79cb7974136a467ce"
+  version = "v6.0.0-alpha2"
 
 [[projects]]
   name = "github.com/elastic/go-lumber"
@@ -62,10 +98,28 @@
   version = "v0.4.6"
 
 [[projects]]
+  name = "github.com/ericchiang/k8s"
+  packages = [".","api/resource","api/unversioned","api/v1","apis/apps/v1alpha1","apis/apps/v1beta1","apis/authentication/v1","apis/authentication/v1beta1","apis/authorization/v1","apis/authorization/v1beta1","apis/autoscaling/v1","apis/autoscaling/v2alpha1","apis/batch/v1","apis/batch/v2alpha1","apis/certificates/v1alpha1","apis/certificates/v1beta1","apis/extensions/v1beta1","apis/imagepolicy/v1alpha1","apis/meta/v1","apis/policy/v1alpha1","apis/policy/v1beta1","apis/rbac/v1alpha1","apis/rbac/v1beta1","apis/settings/v1alpha1","apis/storage/v1","apis/storage/v1beta1","runtime","runtime/schema","util/intstr","watch/versioned"]
+  revision = "68b0248f880c5967d1ba7166486cb216af849b15"
+  version = "v0.4.0"
+
+[[projects]]
   name = "github.com/garyburd/redigo"
   packages = ["internal","redis"]
   revision = "433969511232c397de61b1442f9fd49ec06ae9ba"
   version = "v1.1.0"
+
+[[projects]]
+  name = "github.com/ghodss/yaml"
+  packages = ["."]
+  revision = "0ca9ea5df5451ffdf184b4428c902747c2c11cd7"
+  version = "v1.0.0"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/golang/protobuf"
+  packages = ["proto"]
+  revision = "0a4f71a498b7c4812f64969510bcb4eca251e33a"
 
 [[projects]]
   branch = "master"
@@ -98,10 +152,10 @@
   revision = "2bca23e0e452137f789efbc8610126fd8b94f73b"
 
 [[projects]]
-  branch = "master"
-  name = "github.com/nranchev/go-libGeoIP"
-  packages = ["."]
-  revision = "d6d4a9a4c7e8d750064c10550bbd4f9aae50d48e"
+  name = "github.com/opencontainers/runc"
+  packages = ["libcontainer/user"]
+  revision = "baf6536d6259209c3edfa2b22237af82942d3dfa"
+  version = "v0.1.1"
 
 [[projects]]
   name = "github.com/pierrec/lz4"
@@ -136,14 +190,26 @@
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
-  packages = ["proxy"]
+  packages = ["context","context/ctxhttp","http2","http2/hpack","idna","lex/httplex","proxy"]
   revision = "f01ecb60fe3835d80d9a0b7b2bf24b228c89260e"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
-  packages = ["windows","windows/svc","windows/svc/debug"]
+  packages = ["unix","windows","windows/svc","windows/svc/debug"]
   revision = "abf9c25f54453410d0c6668e519582a9e1115027"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/text"
+  packages = ["internal/gen","internal/triegen","internal/ucd","secure/bidirule","transform","unicode/bidi","unicode/cldr","unicode/norm","unicode/rangetable"]
+  revision = "cfdf022e86b4ecfb646e1efbd7db175dd623a8fa"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/tools"
+  packages = ["go/ast/astutil","go/buildutil","go/loader"]
+  revision = "bce9606b3f617bc6280aab6abbf25962c23f398d"
 
 [[projects]]
   branch = "v2"

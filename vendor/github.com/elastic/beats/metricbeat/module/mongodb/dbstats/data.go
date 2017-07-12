@@ -44,5 +44,3 @@ var schema = s.Schema{
 		},
 	}, c.DictOptional),
 }
-
-var eventMapping = schema.Apply

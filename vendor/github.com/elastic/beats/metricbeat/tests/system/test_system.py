@@ -1,4 +1,5 @@
 import re
+import six
 import sys
 import unittest
 import metricbeat
@@ -39,10 +40,10 @@ SYSTEM_NETWORK_FIELDS = ["name", "out.bytes", "in.bytes", "out.packets",
 # is not available on all OSes and requires root to read for all processes.
 # cgroup is only available on linux.
 SYSTEM_PROCESS_FIELDS = ["cpu", "memory", "name", "pid", "ppid", "pgid",
-                         "state", "username", "cgroup"]
+                         "state", "username", "cgroup", "cwd"]
 
 
-class SystemTest(metricbeat.BaseTest):
+class Test(metricbeat.BaseTest):
 
     @unittest.skipUnless(re.match("(?i)win|linux|darwin|freebsd|openbsd", sys.platform), "os")
     def test_cpu(self):
@@ -292,12 +293,48 @@ class SystemTest(metricbeat.BaseTest):
             self.assertItemsEqual(self.de_dot(SYSTEM_NETWORK_FIELDS), network.keys())
 
     @unittest.skipUnless(re.match("(?i)win|linux|darwin|freebsd", sys.platform), "os")
+    def test_process_summary(self):
+        """
+        Test system/process_summary output.
+        """
+        self.render_config_template(modules=[{
+            "name": "system",
+            "metricsets": ["process_summary"],
+            "period": "5s",
+        }])
+        proc = self.start_beat()
+        self.wait_until(lambda: self.output_lines() > 0)
+        proc.check_kill_and_wait()
+        self.assert_no_logged_warnings()
+
+        output = self.read_output_json()
+        self.assertGreater(len(output), 0)
+
+        for evt in output:
+            self.assert_fields_are_documented(evt)
+
+            summary = evt["system"]["process"]["summary"]
+            assert isinstance(summary["total"], int)
+            assert isinstance(summary["sleeping"], int)
+            assert isinstance(summary["running"], int)
+            assert isinstance(summary["idle"], int)
+            assert isinstance(summary["stopped"], int)
+            assert isinstance(summary["zombie"], int)
+            assert isinstance(summary["unknown"], int)
+
+            assert summary["total"] == summary["sleeping"] + summary["running"] + \
+                summary["idle"] + summary["stopped"] + summary["zombie"] + summary["unknown"]
+
+    @unittest.skipUnless(re.match("(?i)win|linux|darwin|freebsd", sys.platform), "os")
     def test_process(self):
         """
         Test system/process output.
         """
         if not sys.platform.startswith("linux") and "cgroup" in SYSTEM_PROCESS_FIELDS:
             SYSTEM_PROCESS_FIELDS.remove("cgroup")
+
+        if not sys.platform.startswith("linux") and "cwd" in SYSTEM_PROCESS_FIELDS:
+            SYSTEM_PROCESS_FIELDS.remove("cwd")
 
         self.render_config_template(modules=[{
             "name": "system",
@@ -368,8 +405,8 @@ class SystemTest(metricbeat.BaseTest):
 
         assert re.match("(?i)metricbeat.test(.exe)?", output["system.process.name"])
         assert re.match("(?i).*metricbeat.test(.exe)? -systemTest", output["system.process.cmdline"])
-        assert isinstance(output["system.process.state"], basestring)
-        assert isinstance(output["system.process.cpu.start_time"], basestring)
+        assert isinstance(output["system.process.state"], six.string_types)
+        assert isinstance(output["system.process.cpu.start_time"], six.string_types)
         self.check_username(output["system.process.username"])
 
     def check_username(self, observed, expected=None):
