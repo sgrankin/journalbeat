@@ -100,8 +100,7 @@
 [[projects]]
   name = "github.com/ericchiang/k8s"
   packages = [".","api/resource","api/unversioned","api/v1","apis/apps/v1alpha1","apis/apps/v1beta1","apis/authentication/v1","apis/authentication/v1beta1","apis/authorization/v1","apis/authorization/v1beta1","apis/autoscaling/v1","apis/autoscaling/v2alpha1","apis/batch/v1","apis/batch/v2alpha1","apis/certificates/v1alpha1","apis/certificates/v1beta1","apis/extensions/v1beta1","apis/imagepolicy/v1alpha1","apis/meta/v1","apis/policy/v1alpha1","apis/policy/v1beta1","apis/rbac/v1alpha1","apis/rbac/v1beta1","apis/settings/v1alpha1","apis/storage/v1","apis/storage/v1beta1","runtime","runtime/schema","util/intstr","watch/versioned"]
-  revision = "68b0248f880c5967d1ba7166486cb216af849b15"
-  version = "v0.4.0"
+  revision = "5803ed75e31fc1998b5f781ac08e22ff985c3f8f"
 
 [[projects]]
   name = "github.com/fatih/color"
@@ -244,6 +243,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "ed765672315fe6a65309a2606b99f730f3880b46af9efaffb9abc612b253cf3e"
+  inputs-digest = "dd68b9e5aca451b518d5cd51458f49e78249696c011c2fca016cf3e27ba11e72"
   solver-name = "gps-cdcl"
   solver-version = 1
