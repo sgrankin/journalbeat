@@ -25,43 +25,8 @@ TAGS := $(foreach t,$(TAGS),$(IMAGE_NAME):$(t))
 # Clean up the project
 #
 clean:
-	rm -f Dockerfile
 	rm -rf build
 .PHONY: clean
-
-#
-# Copy the Dockerfile for the build to the main project directory
-#
-Dockerfile:
-	cp docker/dockerfile.build Dockerfile
-
-#
-# Make the build directory
-#
-build: Dockerfile build/journalbeat
-
-#
-# Build the journalbeat go image using docker
-#
-build/journalbeat:
-	mkdir -p build
-	docker build -t $(IMAGE_BUILD_NAME) .
-	docker run --name $(IMAGE_BUILD_NAME) $(IMAGE_BUILD_NAME)
-	-docker cp $(IMAGE_BUILD_NAME):/go/src/github.com/mheese/journalbeat/journalbeat build/journalbeat
-	docker rm $(IMAGE_BUILD_NAME)
-	docker rmi $(IMAGE_BUILD_NAME)
-
-#
-# Copy the Dockerfile for release to the build directory
-#
-build/Dockerfile:
-	cp docker/dockerfile.release build/Dockerfile
-
-#
-# Copy the default journalbeat.yml for release to the build directory
-#
-build/journalbeat.yml:
-	cp docker/journalbeat.yml build/journalbeat.yml
 
 #
 # docker tag the image
@@ -73,8 +38,8 @@ docker-tag: docker-build
 #
 # docker build the image
 #
-docker-build: build build/Dockerfile build/journalbeat.yml
-	cd build && docker build -t $(IMAGE_NAME) .
+docker-build:
+	docker build -t $(IMAGE_NAME) .
 .PHONY: docker-build
 
 #
