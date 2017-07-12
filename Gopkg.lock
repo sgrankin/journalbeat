@@ -80,14 +80,14 @@
   version = "v1.0.2"
 
 [[projects]]
+  branch = "master"
   name = "github.com/elastic/beats"
-  packages = ["filebeat/input/file","libbeat/api","libbeat/beat","libbeat/cfgfile","libbeat/common","libbeat/common/dtfmt","libbeat/common/file","libbeat/common/fmtstr","libbeat/common/jsontransform","libbeat/common/match","libbeat/common/op","libbeat/common/streambuf","libbeat/dashboards","libbeat/logp","libbeat/monitoring","libbeat/monitoring/adapter","libbeat/monitoring/report","libbeat/monitoring/report/elasticsearch","libbeat/outputs","libbeat/outputs/codecs/format","libbeat/outputs/codecs/json","libbeat/outputs/console","libbeat/outputs/elasticsearch","libbeat/outputs/fileout","libbeat/outputs/kafka","libbeat/outputs/logstash","libbeat/outputs/mode","libbeat/outputs/mode/lb","libbeat/outputs/mode/modeutil","libbeat/outputs/mode/single","libbeat/outputs/outil","libbeat/outputs/redis","libbeat/outputs/transport","libbeat/paths","libbeat/plugin","libbeat/processors","libbeat/processors/actions","libbeat/processors/add_cloud_metadata","libbeat/processors/add_docker_metadata","libbeat/processors/add_locale","libbeat/processors/kubernetes","libbeat/publisher","libbeat/service","libbeat/template","libbeat/version","metricbeat/schema","metricbeat/schema/mapstriface"]
-  revision = "08c25427018977dd1e5aaaf79cb7974136a467ce"
-  version = "v6.0.0-alpha2"
+  packages = ["libbeat/api","libbeat/beat","libbeat/cfgfile","libbeat/common","libbeat/common/atomic","libbeat/common/dtfmt","libbeat/common/file","libbeat/common/fmtstr","libbeat/common/jsontransform","libbeat/common/match","libbeat/common/op","libbeat/common/schema","libbeat/common/schema/mapstriface","libbeat/common/streambuf","libbeat/dashboards","libbeat/logp","libbeat/monitoring","libbeat/monitoring/adapter","libbeat/monitoring/report","libbeat/monitoring/report/elasticsearch","libbeat/outputs","libbeat/outputs/codec","libbeat/outputs/codec/format","libbeat/outputs/codec/json","libbeat/outputs/console","libbeat/outputs/elasticsearch","libbeat/outputs/fileout","libbeat/outputs/kafka","libbeat/outputs/logstash","libbeat/outputs/outil","libbeat/outputs/redis","libbeat/outputs/transport","libbeat/paths","libbeat/plugin","libbeat/processors","libbeat/processors/actions","libbeat/processors/add_cloud_metadata","libbeat/processors/add_docker_metadata","libbeat/processors/add_kubernetes_metadata","libbeat/processors/add_locale","libbeat/publisher","libbeat/publisher/bc/publisher","libbeat/publisher/beat","libbeat/publisher/broker","libbeat/publisher/broker/membroker","libbeat/publisher/includes","libbeat/publisher/pipeline","libbeat/service","libbeat/setup/kibana","libbeat/template","libbeat/testing","libbeat/version"]
+  revision = "7a6a5ddd2af92fbe2f16a086ea1eece4e712c245"
 
 [[projects]]
   name = "github.com/elastic/go-lumber"
-  packages = ["client/v2","log","protocol/v2"]
+  packages = ["client/v2","protocol/v2"]
   revision = "616041e345fc33c97bc0eb0fa6b388aa07bca3e1"
   version = "v0.1.0"
 
@@ -102,6 +102,12 @@
   packages = [".","api/resource","api/unversioned","api/v1","apis/apps/v1alpha1","apis/apps/v1beta1","apis/authentication/v1","apis/authentication/v1beta1","apis/authorization/v1","apis/authorization/v1beta1","apis/autoscaling/v1","apis/autoscaling/v2alpha1","apis/batch/v1","apis/batch/v2alpha1","apis/certificates/v1alpha1","apis/certificates/v1beta1","apis/extensions/v1beta1","apis/imagepolicy/v1alpha1","apis/meta/v1","apis/policy/v1alpha1","apis/policy/v1beta1","apis/rbac/v1alpha1","apis/rbac/v1beta1","apis/settings/v1alpha1","apis/storage/v1","apis/storage/v1beta1","runtime","runtime/schema","util/intstr","watch/versioned"]
   revision = "68b0248f880c5967d1ba7166486cb216af849b15"
   version = "v0.4.0"
+
+[[projects]]
+  name = "github.com/fatih/color"
+  packages = ["."]
+  revision = "570b54cabe6b8eb0bc2dfce68d964677d63b5260"
+  version = "v1.5.0"
 
 [[projects]]
   name = "github.com/garyburd/redigo"
@@ -146,6 +152,18 @@
   version = "v1.0"
 
 [[projects]]
+  name = "github.com/mattn/go-colorable"
+  packages = ["."]
+  revision = "941b50ebc6efddf4c41c8e4537a5f68a4e686b24"
+  version = "v0.0.8"
+
+[[projects]]
+  name = "github.com/mattn/go-isatty"
+  packages = ["."]
+  revision = "fc9e8d8ef48496124e79ae0df75490096eccf6fe"
+  version = "v0.0.2"
+
+[[projects]]
   branch = "master"
   name = "github.com/mitchellh/hashstructure"
   packages = ["."]
@@ -178,7 +196,7 @@
 [[projects]]
   branch = "master"
   name = "github.com/rcrowley/go-metrics"
-  packages = [".","exp"]
+  packages = ["."]
   revision = "1f30fe9094a513ce4c700b9a54458bbb0c96996c"
 
 [[projects]]
@@ -186,6 +204,12 @@
   packages = ["."]
   revision = "879c5887cd475cd7864858769793b2ceb0d44feb"
   version = "v1.1.0"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/urso/go-structform"
+  packages = [".","gotype","internal/unsafe","json"]
+  revision = "fc6abfdbae53e185870094bc210b42a0f65f6176"
 
 [[projects]]
   branch = "master"
