@@ -29,6 +29,7 @@ import (
 	"github.com/elastic/beats/libbeat/publisher/bc/publisher"
 	"github.com/mheese/journalbeat/config"
 	"github.com/mheese/journalbeat/journal"
+	_ "github.com/mheese/journalbeat/processor/add_kubernetes_metadata"
 )
 
 // Journalbeat is the main Journalbeat struct
