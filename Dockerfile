@@ -1,4 +1,4 @@
-FROM golang:1.8 as build
+FROM golang:1.8-stretch as build
 MAINTAINER mbrooks
 
 RUN apt-get update && \
@@ -10,7 +10,7 @@ COPY . /go/src/github.com/mheese/journalbeat
 WORKDIR /go/src/github.com/mheese/journalbeat
 RUN go build
 
-FROM debian:jessie
+FROM debian:stretch
 MAINTAINER mbrooks
 
 RUN mkdir -p /data
