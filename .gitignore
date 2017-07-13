@@ -23,8 +23,3 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-
-# Build/package files
-bin/
-build/
-vendor/github.com/coreos/go-systemd/sdjournal/systemd/
